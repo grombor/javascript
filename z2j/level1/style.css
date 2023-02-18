@@ -1,0 +1,43 @@
+#redText {
+  color: red;
+}
+
+nav {
+    background-color: #2a9d8f;
+}
+
+nav li {
+  list-style: none;
+  display: block;
+  display: inline;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(7, 7, 7);
+}
+
+nav a:hover {
+    color: whitesmoke;
+}
+
+footer p ~ span {
+    font-size: .75rem;
+}
+
+main section {
+    background-color: #cdb4db;
+}
+
+.section_1 {
+    background-color: #bde0fe;
+}
+
+.section_2 {
+    background-color: #ffafcc;
+}
+
+footer {
+    background-color: #264653;
+    color: cornsilk;
+}
