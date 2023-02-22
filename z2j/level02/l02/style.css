@@ -1,0 +1,28 @@
+body {
+    background-color: #8bc34a;
+}
+
+.flex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.flex-item {
+    width: 420px;
+    margin: .64rem;
+    padding: .75rem;
+    border: 10px solid #a52a2a;
+    background-color: #b97a5c;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.flex-item h4 {
+    margin: .56em auto;
+}
+
+.flex-item image {
+    width: 377px
+}
