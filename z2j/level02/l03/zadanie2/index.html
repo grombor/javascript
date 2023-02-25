@@ -35,7 +35,9 @@
       } else {
         alert('Nieprawidłowy operator!');
       }
-      if (typeof(result) === Number && typeof(result) !== Infinity) alert(`Wynik: ${result}`)
+      if (typeof(result) !== NaN) {
+        alert(`Wynik: ${result}`)
+      }
       
     </script>
   </body>
