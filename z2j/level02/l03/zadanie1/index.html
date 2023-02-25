@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zadanie 1</title>
+  </head>
+  <body>
+    <script>
+      'use strict;';
+
+      const alertMessage =
+        'Największym zwierzęciem na Ziemi jest nie lądowy ssak, ale olbrzymi płetwal błękitny, który może ważyć ponad 200 ton';
+      const confirmMessage =
+        'Czy widziałeś kiedyś zdjęcia niebezpiecznych gatunków rekina? Kliknij OK, jeśli tak, lub Anuluj, jeśli nie jesteś pewien.';
+      const confirmPositiveAnswer =
+        'Fajnie, że jesteś zainteresowany rekina. Nasza firma organizuje wyprawy nurkowe z rekinami w różnych częściach świata.';
+      const confirmNegativeAnswer =
+        'Nic nie szkodzi, niektórzy ludzie boją się ryb i innych stworzeń morskich. Możesz zawsze skorzystać z naszych innych ofert i znaleźć coś, co Cię zainteresuje. Nasza firma organizuje wyprawy nurkowe z rekinami w różnych częściach świata.';
+      const promptAnswer =
+        'Zgodnie z danymi NASA, około 70,8% tej powierzchni pokrywają oceany, co daje około 361,13 milionów km² powierzchni morskiej.';
+      const promptquestion = 'Czy wiesz ile powierzchni Ziemi pokrywa woda?';
+
+      const messages = {
+        alert: alertMessage,
+        confirm: {
+          question: confirmMessage,
+          positive: confirmPositiveAnswer,
+          negative: confirmNegativeAnswer,
+        },
+        prompt: {
+          question: promptquestion,
+          answer: promptAnswer,
+        },
+      };
+
+      function zadawajPytania() {
+        alert(messages.alert);
+        const askConfirm = confirm(messages.confirm.question);
+        const confirmAnswer = askConfirm
+          ? messages.confirm.positive
+          : messages.confirm.negative;
+        alert(confirmAnswer);
+        if (prompt(messages.prompt.question) != 0) {
+          alert(messages.prompt.answer);
+        } else {
+          alert('Nie żartuj sobie.');
+        }
+      }
+
+      zadawajPytania();
+    </script>
+  </body>
+</html>

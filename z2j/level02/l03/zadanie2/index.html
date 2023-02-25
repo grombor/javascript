@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zadanie 2</title>
+  </head>
+  <body>
+    <script>
+      function handleDivision(num1, num2) {
+        let result;
+        if (num2) alert("Nieprawidłowa operacja: dzielenie przez zero!");
+        try {
+          result = Number(num1) / Number(num2);
+        } catch (error) {
+          alert("Nieprawidłowa operacja: dzielenie przez zero!")
+        }
+      }
+      let num1 = prompt('Wpisz pierwszą liczbę:');
+      let num2 = prompt('Wpisz drugą liczbę:');
+      let operator = prompt('Wybierz operator (+, -, *, /):');
+
+      let result;
+
+
+      if (operator === '+') {
+        result = Number(num1) + Number(num2);
+      } else if (operator === '-') {
+        result = Number(num1) - Number(num2);
+      } else if (operator === '*') {
+        result = Number(num1) * Number(num2);
+      } else if (operator === '/') {
+        handleDivision(num1, num2);
+      } else {
+        alert('Nieprawidłowy operator!');
+      }
+      if (typeof(result) === Number && typeof(result) !== Infinity) alert(`Wynik: ${result}`)
+      
+    </script>
+  </body>
+</html>

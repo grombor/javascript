@@ -23,6 +23,6 @@ body {
     margin: .56em auto;
 }
 
-.flex-item image {
-    width: 377px
+.flex-item img {
+    object-fit: contain;
 }
