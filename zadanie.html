@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zadanie 3</title>
+  </head>
+  <body>
+    <script>
+      /* TODO
+      -   Jeśli pominąłeś/aś to zadanie, wróć do niego, zrób je i wróć z nim tutaj
+  -   Jeżeli pierwszą wersję zrobiłeś/aś bez wykorzystania funkcji, wstaw każdą operację matematyczną do osobnej funkcji, przyjmującej pierwszą i drugą liczbę jako parametry
+  -   W przypadku dzielenia, obsłuż przypadek dzielenia przez zero wewnątrz tej funkcji. To główny cel tego całego zabiegu
+  -   Teraz najciekawsza część 😄. Dodaj możliwość wykonywania kolejnych operacji, bazujących na ostatnim wyniku działania 
+  -   Przykład: Obliczasz 2+2=4, następnie pojawia się okno na kolejny operator arytmetyczny. Po nim pojawia się okno “Podaj kolejną liczbę”. Załóżmy że wynik z poprzedniego działania chcemy pomnożyć razy 3. Powinniśmy otrzymać 12, po czym kolejne pytanie o operator i liczbę. I tak w kółko aż do momentu zostawienia pustego pola w pytaniu o operator.
+   -   W razie niejasności video jak to powinno działać: https://vimeo.com/785049805/ce603e542f
+   */
+      var nextLoop = true;
+      var calcResult;
+
+      function handleDivision(num1, num2) {
+        let result;
+        if (num2 == 0)
+          return alert('Nieprawidłowa operacja: dzielenie przez zero!');
+        try {
+          return Number(num1) / Number(num2);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+      function handleAddidion(num1, num2) {
+        try {
+          return Number(num1) + Number(num2);
+        } catch (error) {}
+      }
+
+      function handleSubtraction(num1, num2) {
+        try {
+          return Number(num1) - Number(num2);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+      function handleMultiplication(num1, num2) {
+        try {
+          return Number(num1) * Number(num2);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+      function getOperand(text) {
+        function checkIsNaNAfterConversion(num) {
+          if (Number.isNaN(Number(num))) {
+            alert('Podałeś nieprawidłowe dane.');
+            return true;
+          } else return false;
+        }
+        let operant = prompt(text);
+        if (!checkIsNaNAfterConversion(operant)) {
+          return operant;
+        }
+      }
+
+      function getOperator() {
+        let operator = prompt('Wybierz operator (+, -, *, /) lub pozostaw pusty, aby przerwać działanie programu.');
+        let allowedOperators = ['+', '-', '/', '*', ''];
+        let result = allowedOperators.includes(operator)
+          ? operator
+          : operator === ''
+          ? stop()
+          : alert('Nieprawidłowy operator!');
+        return result;
+      }
+
+      function stop() {
+        return (nextLoop = false);
+      }
+
+      function runCalc() {
+        let num1;
+        if (calcResult === undefined) {
+          num1 = getOperand('Wpisz pierwszą liczbę:');
+        } else {
+          num1 = calcResult;
+        }
+        let num2 = getOperand('Wpisz kolejną liczbę:');
+        let operator = getOperator();
+        switch (operator) {
+          case '/':
+            calcResult = handleDivision(num1, num2)
+            alert(calcResult);
+            break;
+          case '+':
+          calcResult = handleAddidion(num1, num2)
+            alert(calcResult);
+            break;
+          case '-':
+          calcResult = handleSubtraction(num1, num2)
+            alert(calcResult);
+            break;
+          case '*':
+          calcResult = handleMultiplication(num1, num2)
+            alert(calcResult);
+            break;
+          case '':
+            stop();
+            break;
+          default:
+            break;
+        }
+      }
+
+      while (nextLoop) {
+        runCalc();
+      }
+    </script>
+  </body>
+</html>
