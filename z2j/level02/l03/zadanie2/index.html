@@ -10,19 +10,23 @@
     <script>
       function handleDivision(num1, num2) {
         let result;
-        if (num2) alert("Nieprawidłowa operacja: dzielenie przez zero!");
+        if (num2) alert('Nieprawidłowa operacja: dzielenie przez zero!');
         try {
           result = Number(num1) / Number(num2);
         } catch (error) {
-          alert("Nieprawidłowa operacja: dzielenie przez zero!")
+          alert('Nieprawidłowa operacja: dzielenie przez zero!');
         }
       }
+
+      function handleAddition(num1, num2) {
+
+      }
+
       let num1 = prompt('Wpisz pierwszą liczbę:');
       let num2 = prompt('Wpisz drugą liczbę:');
       let operator = prompt('Wybierz operator (+, -, *, /):');
 
       let result;
-
 
       if (operator === '+') {
         result = Number(num1) + Number(num2);
@@ -35,12 +39,11 @@
       } else {
         alert('Nieprawidłowy operator!');
       }
-      if (typeof(result) !== NaN) {
-        alert(`Wynik: ${result}`)
+      if (typeof result !== NaN) {
+        alert(`Wynik: ${result}`);
       } else {
-        alert('Coś poszło nie tak :(')
+        alert('Coś poszło nie tak :(');
       }
-      
     </script>
   </body>
 </html>

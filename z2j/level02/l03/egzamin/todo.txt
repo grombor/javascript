@@ -1,0 +1,10 @@
+Wpis ma zawierać 4 elementy:
+
+1. Napisz co sprawiło Ci największy problem i jak udało Ci się z tym poradzić 
+2. Wrzuć link do gotowej strony, a jeśli nie masz takiej możliwości to nagraj film demonstrujący jej działanie.
+3. Daj link do repozytorium z kodem (publicznie dostępne).
+4. Jeśli do rozwiązania były Ci potrzebne inne materiały niż książka, wrzuć linki.
+
+Na tym, etapie, to @Jakub Kuś | jkus.dev  (sprawdza i woła mnie, żebym ustawił właściwą rolę) zatwierdza odpowiedzi.
+
+Zdany egzamin, umożliwi Ci przejście na kolejny poziom. Jeśli masz z czymś problem, czegoś nie rozumiesz, po prostu napisz w tym poście. 
