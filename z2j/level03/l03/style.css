@@ -1,0 +1,74 @@
+main {
+    position: absolute;
+    top: 25%;
+    left: 30%;
+}
+
+.container {
+  width: 500px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-row-gap: 1em;
+  grid-column-gap: 2.5em;
+}
+
+.container button {
+  border-radius: .5em;
+  height: 3.5rem;
+  box-shadow: 1px 1px 3px 0px dimgray;
+}
+
+.container button:hover {
+    background-color: lightgray;
+    color: white;
+    box-shadow: 1px 1px 3px 0px dimgray;
+}
+
+.container button:active {
+    background-color: lightgray;
+    color: white;
+    box-shadow: 1px 1px 2px 0px;
+    border-left: 1px solid whitesmoke;
+    border-top: 1px solid whitesmoke;
+}
+
+button:nth-of-type(-n + 3) {
+  counter-increment: first-counter;
+}
+
+button:nth-of-type(-n + 3)::before {
+  content: counter(first-counter) '. ';
+}
+
+button:nth-of-type(n + 4):nth-of-type(-n + 6) {
+  counter-increment: first-counter;
+}
+
+button:nth-of-type(n + 4):nth-of-type(-n + 6)::before {
+  content: counter(first-counter, upper-roman) ') ';
+}
+
+button:nth-of-type(n + 7):nth-of-type(-n + 9) {
+  counter-increment: first-counter;
+}
+
+button:nth-of-type(n + 7):nth-of-type(-n + 9)::before {
+  content: '[' counter(first-counter) '] ';
+}
+
+button:nth-of-type(4) {
+    background-color: #F8961E;
+}
+
+button:nth-of-type(4):hover {
+    background-color: #4D908E;
+}
+
+button:last-of-type {
+    background-color: #90BE6D;
+}
+
+button:last-of-type:hover {
+    background-color: skyblue;
+}
