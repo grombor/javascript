@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;400;700;900&family=VT323&display=swap');
+
+body {
+  font-family: 'League Spartan', sans-serif;
+}
+
 .game {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* width: 313px;
-  height: 313px; */
 }
 
 .board {
@@ -34,8 +38,19 @@
 }
 
 .button {
-position: relative;
-margin-top: 1em;
-width: 100%;
-padding: 1.2em;
+  position: relative;
+  margin-top: 1em;
+  width: 100%;
+  padding: 1em;
+  background-color: inherit;
+  font-weight: 700;
+  font-size: 1.4em;
+  text-transform: uppercase;
+  border: 1px solid black;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #eee;
 }
