@@ -1,0 +1,75 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(to right, #800080, #191919);
+}
+
+.grid-container {
+  display: grid;
+  grid-auto-columns: auto;
+}
+
+.grid-item > figure {
+  width: 100%;
+  border: none;
+}
+
+.grid-item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 150px;
+  border: 5px solid whitesmoke;
+  white-space: nowrap;
+  /* overflow-x: scroll;
+  overflow-y: hidden; */
+  overflow: scroll hidden;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: repeat(5, 28%) ;
+  grid-template-rows: 150px;
+  gap: 5px;
+  background-color: whitesmoke;
+}
+
+.list-item {
+  cursor: pointer;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-clip: border-box;
+  background-position: center;
+}
+
+#list-item-1 {
+  background-image: url(https://picsum.photos/600/350?random=1);
+}
+
+#list-item-2 {
+  background-image: url(https://picsum.photos/600/350?random=2);
+}
+
+#list-item-3 {
+  background-image: url(https://picsum.photos/600/350?random=3);
+}
+
+#list-item-4 {
+  background-image: url(https://picsum.photos/600/350?random=4);
+}
+
+#list-item-5 {
+  background-image: url(https://picsum.photos/600/350?random=5);
+}
