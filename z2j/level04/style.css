@@ -50,34 +50,14 @@ body {
   background: no-repeat center/contain;
   transform-origin: center;
   transition: transform 300ms ease-in-out;
+  overflow: clip;
 }
 
 .list-item:hover {
   transform: scale(1.05);
 }
 
-#list-item-1 {
-  background-image: url(https://picsum.photos/600/350?random=1);
+a img {
+  max-height: 100%;
 }
 
-#list-item-2 {
-  background-image: url(https://picsum.photos/600/350?random=2);
-}
-
-#list-item-3 {
-  background-image: url(https://picsum.photos/600/350?random=3);
-}
-
-#list-item-4 {
-  background-image: url(https://picsum.photos/600/350?random=4);
-}
-
-#list-item-5 {
-  background-image: url(https://picsum.photos/600/350?random=5);
-}
-
-@media screen and (max-width: 375px) {
-  .carousel {
-    width: 100%;
-  }
-}
