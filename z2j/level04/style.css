@@ -35,13 +35,10 @@ body {
   height: 150px;
   border: 5px solid whitesmoke;
   white-space: nowrap;
-  /* overflow-x: scroll;
-  overflow-y: hidden; */
-  overflow: scroll hidden;
-  overscroll-behavior: contain;
+  overflow: hidden;
   cursor: pointer;
   display: grid;
-  grid-template-columns: repeat(5, 28%) ;
+  grid-template-columns: repeat(5, 28%);
   grid-template-rows: 150px;
   gap: 5px;
   background-color: whitesmoke;
@@ -50,9 +47,13 @@ body {
 .list-item {
   cursor: pointer;
   height: 100%;
-  background-repeat: no-repeat;
-  background-clip: border-box;
-  background-position: center;
+  background: no-repeat center/contain;
+  transform-origin: center;
+  transition: transform 300ms ease-in-out;
+}
+
+.list-item:hover {
+  transform: scale(1.05);
 }
 
 #list-item-1 {
@@ -73,4 +74,10 @@ body {
 
 #list-item-5 {
   background-image: url(https://picsum.photos/600/350?random=5);
+}
+
+@media screen and (max-width: 375px) {
+  .carousel {
+    width: 100%;
+  }
 }
