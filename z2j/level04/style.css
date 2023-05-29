@@ -38,6 +38,7 @@ body {
   /* overflow-x: scroll;
   overflow-y: hidden; */
   overflow: scroll hidden;
+  overscroll-behavior: contain;
   cursor: pointer;
   display: grid;
   grid-template-columns: repeat(5, 28%) ;
