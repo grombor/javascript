@@ -53,7 +53,7 @@ body {
   overflow: clip;
 }
 
-.list-item:hover {
+a img:hover {
   transform: scale(1.05);
 }
 
