@@ -9,6 +9,7 @@ html {
 
 body {
   background: linear-gradient(to right, #800080, #191919);
+  position: relative;
 }
 
 .grid-container {
@@ -35,7 +36,7 @@ body {
   height: 150px;
   border: 5px solid whitesmoke;
   white-space: nowrap;
-  overflow: hidden;
+  overflow: scroll hidden;
   cursor: pointer;
   display: grid;
   grid-template-columns: repeat(5, 28%);
@@ -49,11 +50,11 @@ body {
   height: 100%;
   background: no-repeat center/contain;
   transform-origin: center;
-  transition: transform 300ms ease-in-out;
-  overflow: clip;
+  overflow: hidden;
+  transition: transform 500ms ease-in-out;
 }
 
-a img:hover {
+.list-item:hover img {
   transform: scale(1.05);
 }
 
