@@ -4,11 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <title>Windows 95 Z2J Edition</title>
   </head>
   <body>
     <main>
       <h1>Rejestracja</h1>
+      <form id="registerForm">
+          <label for="firstName">Imię:</label>
+          <input type="text" name="firstName" id="firstName" />
+          <label for="lastName">Nazwisko:</label>
+          <input type="text" name="lastName" id="lastName" />
+          <label for="gender">Płeć:</label>
+          <input type="radio" name="gender" id="female" value="female" checked/>
+          <label for="female">Kobieta</label>
+          <input type="radio" name="gender" id="male" value="male" />
+          <label for="male">Mężczyzna</label>
+          <label for="login">Login:</label>
+          <input type="text" id="login" name="login" />
+          <label for="password">Hasło:</label>
+          <input type="password" id="password" name="password" />
+          <label for="dob">Data urodzenia:</label>
+          <input type="date" name="dob" id="dob" />
+        </form>
+        <button type="submit" id="submitButton" name="submit">Wyślij</button>
     </main>
     <script src="./script.js" defer></script>
   </body>

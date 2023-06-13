@@ -11,3 +11,51 @@
 - Zwróć też uwagę, że oprócz wyświetlenia wartości wyświetla się też zwrot grzecznościowy odpowiedni dla wybranej płci. Dobrze aby w Twoim formularzu też było pole o tym typie i miało wpływ na wynik
 - Pola formularza: Imię, Nazwisko, Płeć, Login, Hasło, Data urodzenia, Przycisk wysyłający
 */
+
+let hasEmptyFields = true;
+
+const handleAlert = (formData) => {
+    const zwrot = formData.get('gender') === 'female' ? 'Pani' : 'Pan';
+    alert(`
+    ${zwrot} ${formData.get('firstName')} ${formData.get('lastName')} urodzony ${formData.get('dob')} chce utworzyć konto o loginie ${formData.get('login')}
+    `)
+}
+
+const handleChange = (e, formData) => {
+    console.log(e.target.id)
+    document.getElementById()
+    // document.querySelectorAll('.alert').forEach(element => element.remove());
+    // handleValidation(formData)
+}
+
+const handleValidation = (formData) => {
+    for (let [key, value] of formData) {
+      if (value === '') {
+        hasEmptyFields = true;
+        const errorElement = document.createElement("div");
+        errorElement.textContent = "Pole nie może być puste";
+        errorElement.classList.add("alert");
+        const elementId = String(key);
+        const adjacentElement = document.getElementById(elementId);
+        adjacentElement.insertAdjacentElement("afterend", errorElement);
+        console.log(`${key} nie posiada wartości`);
+    }
+}
+}
+
+
+const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(registerForm);
+    
+    handleValidation(formData);
+    
+    if (!hasEmptyFields) {
+        handleAlert(formData);
+      }
+  };
+  
+  const submitButton = document.getElementById("submitButton");
+  submitButton.addEventListener("click", handleSubmit);
+  const registerForm = document.getElementById('registerForm');
+  registerForm.addEventListener('input', handleChange);

@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  background-color: #008080;
+  font-family: 'MS Sans Serif', Geneva, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin: 1em auto;
+}
+
+form {
+  background-color: #c0c0c0;
+  padding: 20px;
+  margin: 0 auto;
+  margin-top: 50px;
+  border: 1px solid #000;
+  width: 30vw;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 1em;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"] {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: .2em;
+  margin-top: .5em;
+  border: 1px solid #000;
+  background-color: #fff;
+}
+
+input[type="radio"] {
+  margin-right: .5em;
+  margin-left: 1em;
+  /* margin-bottom: 2em; */
+  margin-top: .5em;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #c0c0c0;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  border: 1px solid #000;
+  font-weight: 700;
+}
+
+button:hover {
+  background-color: #a0a0a0;
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+#submitButton {
+  margin: 1em auto;
+  width: 30vw;
+}
+
+.alert {
+  margin-bottom: .2em;
+  color: red;
+}
