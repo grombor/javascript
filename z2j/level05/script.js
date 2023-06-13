@@ -12,7 +12,7 @@
 - Pola formularza: Imię, Nazwisko, Płeć, Login, Hasło, Data urodzenia, Przycisk wysyłający
 */
 
-let hasEmptyFields = true;
+let hasEmptyFields = false;
 
 const handleAlert = (formData) => {
     const zwrot = formData.get('gender') === 'female' ? 'Pani' : 'Pan';
@@ -22,10 +22,9 @@ const handleAlert = (formData) => {
 }
 
 const handleChange = (e, formData) => {
-    console.log(e.target.id)
-    document.getElementById()
-    // document.querySelectorAll('.alert').forEach(element => element.remove());
-    // handleValidation(formData)
+    const id = `error-${e.target.id}`
+    document.getElementById(id).remove()
+    handleValidation(formData)
 }
 
 const handleValidation = (formData) => {
@@ -35,11 +34,11 @@ const handleValidation = (formData) => {
         const errorElement = document.createElement("div");
         errorElement.textContent = "Pole nie może być puste";
         errorElement.classList.add("alert");
+        errorElement.id = `error-${key}`;
         const elementId = String(key);
         const adjacentElement = document.getElementById(elementId);
         adjacentElement.insertAdjacentElement("afterend", errorElement);
-        console.log(`${key} nie posiada wartości`);
-    }
+    } else hasEmptyFields = false
 }
 }
 
@@ -47,7 +46,7 @@ const handleValidation = (formData) => {
 const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(registerForm);
-    
+    document.querySelectorAll('.alert').forEach(element => element.remove());
     handleValidation(formData);
     
     if (!hasEmptyFields) {
