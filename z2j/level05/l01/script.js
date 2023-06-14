@@ -1,5 +1,4 @@
-"use strict;"
-
+'use strict;';
 
 /* TODO:
 - Dodaj walidacje do pól, które tego wymagają. 
@@ -33,22 +32,19 @@ const handleChange = (e) => {
 };
 
 const handleValidation = (formData) => {
-  hasEmptyFields = false;
-
   for (let [key, value] of formData) {
     if (value === '' || value === undefined || value === null) {
       hasEmptyFields = true;
-      const errorElement = document.createElement("div");
-      errorElement.textContent = "Pole nie może być puste";
-      errorElement.classList.add("alert");
+      const errorElement = document.createElement('div');
+      errorElement.textContent = 'Pole nie może być puste';
+      errorElement.classList.add('alert');
       errorElement.id = `error-${key}`;
       const elementId = String(key);
       const adjacentElement = document.getElementById(elementId);
-      adjacentElement.insertAdjacentElement("afterend", errorElement);
+      adjacentElement.insertAdjacentElement('afterend', errorElement);
       return false;
     }
   }
-
   hasEmptyFields = false;
   return true;
 };
@@ -57,15 +53,14 @@ const handleSubmit = (e) => {
   e.preventDefault();
   hasEmptyFields = true;
   const formData = new FormData(registerForm);
-  document.querySelectorAll('.alert').forEach(element => element.remove());
+  document.querySelectorAll('.alert').forEach((element) => element.remove());
   const isValidated = handleValidation(formData);
-
   if (!hasEmptyFields && isValidated) {
     handleAlert(formData);
   }
 };
 
-const submitButton = document.getElementById("submitButton");
-submitButton.addEventListener("click", handleSubmit);
+const submitButton = document.getElementById('submitButton');
+submitButton.addEventListener('click', handleSubmit);
 const registerForm = document.getElementById('registerForm');
 registerForm.addEventListener('input', handleChange);
