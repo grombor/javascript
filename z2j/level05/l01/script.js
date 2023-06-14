@@ -12,7 +12,7 @@
 - Pola formularza: Imię, Nazwisko, Płeć, Login, Hasło, Data urodzenia, Przycisk wysyłający
 */
 
-let hasEmptyFields = false;
+let hasEmptyFields;
 
 const handleAlert = (formData) => {
     const zwrot = formData.get('gender') === 'female' ? 'Pani' : 'Pan';
@@ -22,14 +22,22 @@ const handleAlert = (formData) => {
 }
 
 const handleChange = (e, formData) => {
-    const id = `error-${e.target.id}`
-    document.getElementById(id).remove()
-    handleValidation(formData)
-}
+    console.log(`change-${e.target.id} ... value-${e.target.value}`)
+    hasEmptyFields = true;
+    const id = `error-${e.target.id}`;
+    const errorElement = document.getElementById(id);
+    if (errorElement) {
+      errorElement.remove();
+    }
+    handleValidation(formData);
+  };
+  
 
-const handleValidation = (formData) => {
-    for (let [key, value] of formData) {
-      if (value === '') {
+  const handleValidation = (formData) => {
+    hasEmptyFields = true;
+    formData?.forEach((value, key) => {
+        console.log(value)
+      if (value === '' || value === undefined || value === null) {
         hasEmptyFields = true;
         const errorElement = document.createElement("div");
         errorElement.textContent = "Pole nie może być puste";
@@ -38,19 +46,25 @@ const handleValidation = (formData) => {
         const elementId = String(key);
         const adjacentElement = document.getElementById(elementId);
         adjacentElement.insertAdjacentElement("afterend", errorElement);
-    } else hasEmptyFields = false
+        return false
+      } else {
+        hasEmptyFields = false;
+        return true
+      }
+    });
 }
-}
-
 
 const handleSubmit = (e) => {
     e.preventDefault();
+    hasEmptyFields = true;
     const formData = new FormData(registerForm);
     document.querySelectorAll('.alert').forEach(element => element.remove());
     handleValidation(formData);
     
     if (!hasEmptyFields) {
+        console.log('before', hasEmptyFields)
         handleAlert(formData);
+        console.log('after', hasEmptyFields)
       }
   };
   
