@@ -22,7 +22,6 @@ const handleAlert = (formData) => {
 };
 
 const handleChange = (e) => {
-  console.log(`change-${e.target.id} ... value-${e.target.value}`);
   hasEmptyFields = true;
   const id = `error-${e.target.id}`;
   const errorElement = document.getElementById(id);
