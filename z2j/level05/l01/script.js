@@ -28,7 +28,7 @@ const handleChange = (e) => {
   if (errorElement) {
     errorElement.remove();
   }
-  const formData = new FormData(registerForm); // Uzyskaj formData wewnątrz funkcji handleChange
+  const formData = new FormData(registerForm);
   handleValidation(formData);
 };
 
