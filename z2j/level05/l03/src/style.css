@@ -1,3 +1,6 @@
-.board {
-    color: red;
-}
+@import './modules/css/body.css';
+@import './modules/css/board.css'
+  
+  
+
+  

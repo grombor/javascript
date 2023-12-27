@@ -1,0 +1,32 @@
+
+  
+  /* Styl dla poszczególnych komórek tablicy */
+  .cell {
+    background-color: #ffffff; /* Kolor komórki */
+    border: 1px solid #808080; /* Granica komórki */
+    font-size: 20px; /* Rozmiar czcionki w komórce */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* Kursor zmienia się na wskaźnik */
+    height: 40px;
+    width: 40px;
+  }
+  
+  /* Styl dla komórek odkrytych z liczbami */
+  .cell.revealed {
+    background-color: #f0f0f0; /* Kolor odkrytej komórki */
+    cursor: default; /* Kursor domyślny po odkryciu */
+  }
+  
+  /* Styl dla komórek z minami */
+  .cell.mine {
+    background-color: #ff0000; /* Kolor miny */
+  }
+  
+  /* Styl dla komórek z flagami */
+  .cell.flag {
+    background-image: url('../../assets/red_flag.png'); /* Ikona flagi */
+    background-size: cover;
+    /* content: " "; */
+  }

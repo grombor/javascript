@@ -1,0 +1,85 @@
+.window {
+    --light-gray: #c0c0c0;
+    --cells-number: 8;
+    --cells-size: 1.5rem;
+    min-width: calc(var(--cells-number) * var(--cells-size));
+    font-weight: 700;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-width: 1px;
+    border-style: solid;
+    border-color: white black black white;
+    display: grid;
+    grid-auto-rows: auto;
+
+    .title {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        color: white;
+        background-color: #000080;
+        padding: .5rem .75rem;
+        border: inherit;
+        font-size: 1.2rem;
+        img {
+            height: 1.5rem;
+            width: 1.5rem;
+            margin-right: .5rem;
+        }
+
+    }
+ 
+    .menu {
+        border: inherit;
+        background-color: var(--light-gray,#c0c0c0);
+        font-weight: 500;
+        padding: .5rem .75rem;
+        position: relative;
+        .menu-item {
+            cursor: pointer;
+            .dropdown-menu {
+                display: grid;
+                border: inherit;
+                position: absolute;
+                top: 2.5em;
+                left: 0;
+                padding: .5rem .75rem;
+                background-color: var(--light-gray,#c0c0c0);
+                z-index: 2;
+                border-width: 1px;
+                border-style: solid;
+                border-color: white black black white;
+                .dropdown-menu-item {
+                    padding: .25em;
+                    text-transform: capitalize;
+                }
+            }
+        }
+    }
+
+
+
+    .board {
+        background-color: var(--light-gray,#c0c0c0);
+        display: grid;
+        grid-template-columns: repeat(var(--cells-number), auto);
+        gap: 1px;
+        padding: .2rem;
+        border: inherit;
+
+        .cell {
+            background-color: inherit;
+            height: var(--cells-size, 1.5rem);
+            width: var(--cells-size, 1.5rem);
+            border: inherit;
+            cursor: pointer;
+        }
+      }
+
+  }
+
+
+
+
