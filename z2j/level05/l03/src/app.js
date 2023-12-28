@@ -4,10 +4,8 @@
 
 import addDropdown from './helpers/dropdownModule.js'
 import addNodeToDom from './helpers/addNode.js';
-import debbuger from './helpers/debugger.js';
 
 function startGame() {
-  debbuger('start game');
   const root = document.querySelector('.window');
   const lightGray = window
     .getComputedStyle(root)
@@ -22,10 +20,6 @@ function startGame() {
     .getComputedStyle(root)
     .getPropertyValue('--cells-size')
     .trim();
-
-    debbuger(lightGray, cellsNumber, cellsSize);
-    debbuger(cellsNumber);
-    debbuger(cellsSize);
 
   // generuj komorki
   const cell = document.createElement('div');

@@ -29,11 +29,12 @@ export default function addDropdown() {
 
   targetElement.addEventListener('mouseover', function () {
     if (!dropdownAdded) {
-      console.log('mouseover');
+      // Dodaj dropdown menu
       let nowaGraMenu = document.createDocumentFragment();
       const dropdownMenu = document.createElement('div');
       dropdownMenu.classList.add('dropdown-menu');
       dropdownMenu.id = 'dropdown-menu';
+      // Dodaj itemy do menu
       dropDownItems.forEach((item) => {
         const menuItem = document.createElement('div');
         menuItem.classList = 'dropdown-menu-item';
@@ -44,7 +45,6 @@ export default function addDropdown() {
       });
       nowaGraMenu.appendChild(dropdownMenu);
       targetElement.appendChild(nowaGraMenu);
-
       dropdownAdded = true;
     }
   });
