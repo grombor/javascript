@@ -1,51 +1,89 @@
-import addNodeToDom from './addNode.js';
-
-export default function addDropdown() {
+export default function addNewGameDropdown() {
   const dropDownItems = [
     {
       label: 'łatwy',
-      fields: 8 * 8,
+      columns: 8,
+      rows: 8,
       mines: 10,
     },
     {
       label: 'średni',
-      fields: 16 * 16,
+      columns: 16,
+      rows: 16,
       mines: 40,
     },
     {
       label: 'trudny',
-      fields: 30 * 16,
+      columns: 30,
+      rows: 16,
       mines: 99,
     },
   ];
 
   let dropdownAdded = false; // Zmienna flagowa śledząca, czy dropdown został dodany
 
-  const targetElement = document.querySelector('#nowa-gra');
+  const nowaGraElement = document.querySelector('#nowa-gra');
 
   const nowaGraLabel = document.createElement('div');
   nowaGraLabel.textContent = 'Nowa gra';
-  targetElement.appendChild(nowaGraLabel);
+  nowaGraElement.appendChild(nowaGraLabel);
 
-  targetElement.addEventListener('mouseover', function () {
+  nowaGraElement.addEventListener('mouseover', function () {
+    // Jeśli dropdown nie został jeszcze wygenrowany to wykonaj kod
+    // Zapobiega duplikowaniu dropdown
     if (!dropdownAdded) {
       // Dodaj dropdown menu
       let nowaGraMenu = document.createDocumentFragment();
       const dropdownMenu = document.createElement('div');
       dropdownMenu.classList.add('dropdown-menu');
       dropdownMenu.id = 'dropdown-menu';
+
       // Dodaj itemy do menu
       dropDownItems.forEach((item) => {
         const menuItem = document.createElement('div');
         menuItem.classList = 'dropdown-menu-item';
         menuItem.textContent = item.label;
-        menuItem.setAttribute('data-game-fields', item.fields);
+        menuItem.setAttribute('data-game-columns', item.columns);
+        menuItem.setAttribute('data-game-rows', item.rows);
         menuItem.setAttribute('data-game-mines', item.mines);
         dropdownMenu.appendChild(menuItem);
       });
       nowaGraMenu.appendChild(dropdownMenu);
-      targetElement.appendChild(nowaGraMenu);
+      nowaGraElement.appendChild(nowaGraMenu);
+
+      // Ustaw flagę, że dropdown został już wygenerowany
       dropdownAdded = true;
+
+      // Dodaj niezbędne EventListenery
+      const containerElement = document.getElementsByClassName('container')[0];
+      containerElement.addEventListener('click', function (e) {
+        const dropdownMenuItemElements = document.querySelectorAll(
+          '.dropdown-menu-item'
+        );
+        const isDropdownMenuItem = [...dropdownMenuItemElements].find(
+          (item) => item === e.target
+        );
+
+        const dropdownElement = document.getElementById('dropdown-menu');
+        if (!dropdownElement) {
+          // Element dropdown-menu nie został znaleziony
+          return;
+        } else if (!dropdownElement.contains(e.target) && !isDropdownMenuItem) {
+          console.log(
+            'Kliknięcie poza dropdownem i nie na .dropdown-menu-item'
+          );
+          dropdownElement.remove();
+          dropdownAdded = false;
+        } else if (isDropdownMenuItem) {
+          console.log(isDropdownMenuItem);
+          console.log('Kliknięcie na .dropdown-menu-item');
+          // 
+          // usun obecne pola
+          // odczytaj atrybuty rows i cols z node
+          // zapisz ich wartosci do zmiennych do css
+          // narysuj tablice ze zmiennych css
+        }
+      });
     }
   });
 }

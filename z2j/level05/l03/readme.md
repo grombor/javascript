@@ -15,14 +15,14 @@
 
 ## User Stories
 #### User Story 1: Użytkownik powinien być w stanie utworzyć nową grę z dowolnym rozmiarem planszy i liczbą min.
-[ ] Stworzenie trzech trybów trudności: łatwy, średni i trudny, z różnymi konfiguracjami planszy wpływającymi na stopień trudności gry.
+[x] Stworzenie trzech trybów trudności: łatwy, średni i trudny, z różnymi konfiguracjami planszy wpływającymi na stopień trudności gry.
 
-[ ] Dostosowanie rozmiaru planszy w zależności od wybranego trybu trudności:
+[] Dostosowanie rozmiaru planszy w zależności od wybranego trybu trudności:
 - łatwy (8x8), 
 - średni (16x16), 
 - trudny (30x16).
 
-[ ] Ustalenie liczby min na planszy zgodnie z trybem trudności:
+[] Ustalenie liczby min na planszy zgodnie z trybem trudności:
 - łatwy (10 min), 
 - średni (40 min), 
 - trudny (99 min). 

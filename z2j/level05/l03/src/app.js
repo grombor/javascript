@@ -1,38 +1,30 @@
 'use strict';
 
+import { getBoardColumns, getBoardRows, clearBoard } from './helpers/gameModule.js';
+import addNewGameDropdown from './helpers/dropdownModule.js';
 
+function startGame(rows, columns) {
 
-import addDropdown from './helpers/dropdownModule.js'
-import addNodeToDom from './helpers/addNode.js';
+const boardElement = document.getElementById('board');
 
-function startGame() {
-  const root = document.querySelector('.window');
-  const lightGray = window
-    .getComputedStyle(root)
-    .getPropertyValue('--light-gray')
-    .trim();
-  const cellsNumber = parseInt(
-    window.
-    getComputedStyle(root).
-    getPropertyValue('--cells-number').trim()
-  );
-  const cellsSize = window
-    .getComputedStyle(root)
-    .getPropertyValue('--cells-size')
-    .trim();
-
-  // generuj komorki
+for (let i = 0; i < (rows * columns); i++) {
   const cell = document.createElement('div');
-  cell.classList.add('cell', 'flagged');
-  for (let i = 0; i < cellsNumber; i++) {
-    for (let j = 0; j < cellsNumber; j++) {
-      addNodeToDom('board', cell);
-    }
-  }
+  cell.classList.add('cell');
+  boardElement.appendChild(cell);
 }
 
+// clearBoard();
 
-document.addEventListener('DOMContentLoaded', function() {
-  startGame();
-  addDropdown();
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Dodaj pasek menu 'Nowa gra'
+    addNewGameDropdown();
+
+  // Zacznij grę z domyślną wielkością tablicy do gry
+  const columns = getBoardColumns();
+  const rows = getBoardRows();
+  startGame(columns, rows);
+
+
 });

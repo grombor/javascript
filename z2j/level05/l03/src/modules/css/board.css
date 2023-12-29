@@ -1,8 +1,10 @@
 .window {
     --light-gray: #c0c0c0;
-    --cells-number: 8;
+    --columns-number: 8;
+    --rows-number: 8;
+    --mines-number: 10;
     --cells-size: 1.5rem;
-    min-width: calc(var(--cells-number) * var(--cells-size));
+    min-width: var(--columns-number);
     font-weight: 700;
     position: absolute;
     top: 50%;
@@ -32,6 +34,10 @@
     }
  
     .menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: nowrap;
         border: inherit;
         background-color: var(--light-gray,#c0c0c0);
         font-weight: 500;
@@ -39,6 +45,7 @@
         position: relative;
         .menu-item {
             cursor: pointer;
+            margin-right: .5em;
             .dropdown-menu {
                 display: grid;
                 border: inherit;
@@ -64,7 +71,7 @@
     .board {
         background-color: var(--light-gray,#c0c0c0);
         display: grid;
-        grid-template-columns: repeat(var(--cells-number), auto);
+        grid-template-columns: repeat(var(--columns-number), 1fr);
         gap: 1px;
         padding: .2rem;
         border: inherit;
