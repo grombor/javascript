@@ -1,3 +1,5 @@
+import { getBoardAttributes, startGame } from "./gameModule.js";
+
 export default function addNewGameDropdown() {
   const dropDownItems = [
     {
@@ -75,13 +77,9 @@ export default function addNewGameDropdown() {
           dropdownElement.remove();
           dropdownAdded = false;
         } else if (isDropdownMenuItem) {
-          console.log(isDropdownMenuItem);
-          console.log('Kliknięcie na .dropdown-menu-item');
-          // 
-          // usun obecne pola
-          // odczytaj atrybuty rows i cols z node
-          // zapisz ich wartosci do zmiennych do css
-          // narysuj tablice ze zmiennych css
+          // Pobież dane z atrybutów i rozpocznij nową grę
+          const [ rows, columns, mines ] = getBoardAttributes(isDropdownMenuItem)
+          startGame(rows, columns, mines)
         }
       });
     }

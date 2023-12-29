@@ -1,30 +1,32 @@
 'use strict';
 
-import { getBoardColumns, getBoardRows, clearBoard } from './helpers/gameModule.js';
+import {
+  getBoardColumns,
+  getBoardRows,
+  getBoardMines,
+  startGame,
+} from './helpers/gameModule.js';
 import addNewGameDropdown from './helpers/dropdownModule.js';
 
-function startGame(rows, columns) {
+// function startGame(rows, columns) {
 
-const boardElement = document.getElementById('board');
+// const boardElement = document.getElementById('board');
 
-for (let i = 0; i < (rows * columns); i++) {
-  const cell = document.createElement('div');
-  cell.classList.add('cell');
-  boardElement.appendChild(cell);
-}
+// for (let i = 0; i < (rows * columns); i++) {
+//   const cell = document.createElement('div');
+//   cell.classList.add('cell');
+//   boardElement.appendChild(cell);
+// }
 
-// clearBoard();
-
-}
+// }
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Dodaj pasek menu 'Nowa gra'
-    addNewGameDropdown();
+  // Dodaj pasek menu 'Nowa gra'
+  addNewGameDropdown();
 
   // Zacznij grę z domyślną wielkością tablicy do gry
   const columns = getBoardColumns();
   const rows = getBoardRows();
-  startGame(columns, rows);
-
-
+  const mines = getBoardMines();
+  startGame(rows, columns, mines);
 });
