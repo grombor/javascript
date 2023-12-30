@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Dodaj pasek menu 'Nowa gra'
   addNewGameDropdown();
 
-  // Zacznij grę z domyślną wielkością tablicy do gry
+  // Zacznij grę
   const columns = getBoardColumns();
   const rows = getBoardRows();
   const mines = getBoardMines();

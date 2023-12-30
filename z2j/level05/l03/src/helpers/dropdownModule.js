@@ -71,14 +71,21 @@ export default function addNewGameDropdown() {
           // Element dropdown-menu nie został znaleziony
           return;
         } else if (!dropdownElement.contains(e.target) && !isDropdownMenuItem) {
+          // Kliknięcie poza dropdownem
           console.log(
             'Kliknięcie poza dropdownem i nie na .dropdown-menu-item'
           );
           dropdownElement.remove();
           dropdownAdded = false;
         } else if (isDropdownMenuItem) {
-          // Pobież dane z atrybutów i rozpocznij nową grę
+
+          // Kliknięcie 2 dropdown
           const [ rows, columns, mines ] = getBoardAttributes(isDropdownMenuItem)
+
+          dropdownElement.remove();
+          dropdownAdded = false;
+          
+          // Rozpocznij nowa gre
           startGame(rows, columns, mines)
         }
       });

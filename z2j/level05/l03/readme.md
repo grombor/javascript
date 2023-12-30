@@ -15,35 +15,35 @@
 
 ## User Stories
 #### User Story 1: Użytkownik powinien być w stanie utworzyć nową grę z dowolnym rozmiarem planszy i liczbą min.
-[x] Stworzenie trzech trybów trudności: łatwy, średni i trudny, z różnymi konfiguracjami planszy wpływającymi na stopień trudności gry.
+- [x] Stworzenie trzech trybów trudności: łatwy, średni i trudny, z różnymi konfiguracjami planszy wpływającymi na stopień trudności gry.
 
-[] Dostosowanie rozmiaru planszy w zależności od wybranego trybu trudności:
+- [x] Dostosowanie rozmiaru planszy w zależności od wybranego trybu trudności:
 - łatwy (8x8), 
 - średni (16x16), 
 - trudny (30x16).
 
-[] Ustalenie liczby min na planszy zgodnie z trybem trudności:
+- [x] Ustawienie min na planszy zgodnie z trybem trudności:
 - łatwy (10 min), 
 - średni (40 min), 
 - trudny (99 min). 
 
-[ ] Dodanie timera mierzącego czas trwania rozgrywki od rozpoczęcia do zakończenia.
+- [ ] Dodanie timera mierzącego czas trwania rozgrywki.
 
 
 #### User Story 2: Użytkownik powinien być w stanie odsłonić pola na planszy, klikając je.
-[ ] Zapewnienie losowego rozmieszczenia min na planszy, unikając zbyt bliskiego umiejscowienia, by utrzymać wyzwanie dla gracza.
-[ ] Wprowadzenie mechanizmu gwarantującego, że rozgrywka nigdy nie rozpocznie się od odsłonięcia pola z miną.
-[ ] Umożliwienie graczowi klikania na puste pola, co odsłoni sąsiednie puste pola, łącznie z polami po przekątnej.
-[ ] Dodanie pól na planszy, informujących gracza o liczbie min w ich bezpośrednim sąsiedztwie. Kliknięcie w puste pole powoduje odsłonięcie sąsiednich pustych pól, również po przekątnej, wywołując łańcuchową reakcję.
+- [x] Zapewnienie losowego rozmieszczenia min na planszy, unikając zbyt bliskiego umiejscowienia, by utrzymać wyzwanie dla gracza.
+- [ ] Wprowadzenie mechanizmu gwarantującego, że rozgrywka nigdy nie rozpocznie się od odsłonięcia pola z miną.
+- [ ] Umożliwienie graczowi klikania na puste pola, co odsłoni sąsiednie puste pola, łącznie z polami po przekątnej.
+- [ ] Dodanie pól na planszy, informujących gracza o liczbie min w ich bezpośrednim sąsiedztwie. Kliknięcie w puste pole powoduje odsłonięcie sąsiednich pustych pól, również po przekątnej, wywołując łańcuchową reakcję.
 
 #### User Story 3: Użytkownik powinien być w stanie oznaczyć pola jako flagowane, klikając je prawym przyciskiem myszy.
-[ ] Odpowiednio oznaczenie pól na planszy zgodnie z ich stanem: nieotwarte pola, oznaczone cyframi, puste pola, oznaczone flagą, pola z pytajnikiem.
+- [ ] Odpowiednio oznaczenie pól na planszy zgodnie z ich stanem: nieotwarte pola, oznaczone cyframi, puste pola, oznaczone flagą, pola z pytajnikiem.
 
-[ ] Implementacja mechanizmu odsłaniania wszystkich pól po zakończeniu gry, dostarczając pełnej informacji o rozmieszczeniu min.
+- [ ] Implementacja mechanizmu odsłaniania wszystkich pól po zakończeniu gry, dostarczając pełnej informacji o rozmieszczeniu min.
 
-[ ] Umieszczenie opcji oznaczania pól jako te, na których gracz podejrzewa obecność miny. Odsłanianie pól dwukrotnym kliknięciem w pola z cyfrą, zgodnie z tradycją klasycznego sapera.
+- [ ] Umieszczenie opcji oznaczania pól jako te, na których gracz podejrzewa obecność miny. Odsłanianie pól dwukrotnym kliknięciem w pola z cyfrą, zgodnie z tradycją klasycznego sapera.
 
-[ ] Wyświetlanie wskaźnika informującego gracza o ilości min pozostałych do oznaczenia.
+- [ ] Wyświetlanie wskaźnika informującego gracza o ilości min pozostałych do oznaczenia.
 
 ## Gameflow
 ### Krok 1: Wybór ustawień gry
