@@ -1,6 +1,8 @@
 const rootElement = document.querySelector('.window');
 const boardElement = document.querySelector('.board');
 
+let isFirstMove = true;
+
 export function getBoardColumns() {
   const cellsNumber = parseInt(
     window
@@ -79,11 +81,13 @@ function createFields(rows, columns) {
   return board
 }
 
-function addCellsToDom(board) {
+function addCellsToBoard(board) {
   board.forEach((row) => {
     row.forEach((column) => {
       const cell = document.createElement('div');
       cell.classList.add('cell');
+      cell.setAttribute('data-game-x', column.x);
+      cell.setAttribute('data-game-y', column.y);
       boardElement.appendChild(cell);
     });
   });
@@ -105,12 +109,48 @@ function setMines(board, rows, columns, mines) {
   return board
 }
 
+function handleFirstStep(){
+  console.log('first move')
+  isFirstMove = false;
+  console.log(x, y)
+  console.log(board)
+}
+
+function handlePlayerMove(){
+  console.log('not first move')
+  console.log(x, y)
+}
+
+function handleCellClick(cell){
+  const x = cell.getAttribute('data-game-x');
+  const y = cell.getAttribute('data-game-y');
+
+  if (isFirstMove) {
+    handleFirstStep(x, y)
+  } else {
+    handlePlayerMove(x, y)
+  }
+}
+
+function addEventListenersToCells() {
+  const cells = document.querySelectorAll('.cell');
+  cells.forEach(cell => {
+    cell.addEventListener('click', function(event) {
+      handleCellClick(event.target)
+  })
+  cell.addEventListener('contextmenu', function(event) {
+    handleCellClick(event.target)
+  });
+})
+};
+
 export function startGame(rows, columns, mines) {
   clearBoard();
   setBoardPropertyValues(rows, columns, mines);
   let board = createFields(rows, columns);
   board = setMines(board, rows, columns, mines);
-  addCellsToDom(board);
+  addCellsToBoard(board);
+  addEventListenersToCells()
 
   console.log(board);
   console.log('game has started');
