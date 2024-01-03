@@ -73,6 +73,6 @@ export function startGame(rows, columns, mines) {
   board = setMines(board, rows, columns, mines);
   addCellsToBoard(board, boardElement);
   addEventListenersToCells(board);
-
+  // debug
   console.log('game has started');
 }

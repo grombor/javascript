@@ -1,8 +1,12 @@
 'use strict';
 
-import { startGame } from './helpers/gameModule.js';
-import { getBoardColumns, getBoardRows, getBoardMines } from './helpers/boardHelpers.js';
-import addNewGameDropdown from './helpers/dropdownModule.js';
+import { startGame } from './modules/js/gameModule.js';
+import {
+  getBoardColumns,
+  getBoardRows,
+  getBoardMines,
+} from './modules/js/boardHelpers.js';
+import addNewGameDropdown from './modules/js/dropdownModule.js';
 
 document.addEventListener('DOMContentLoaded', function () {
   // Dodaj pasek menu 'Nowa gra'

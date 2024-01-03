@@ -32,7 +32,7 @@
 
 #### User Story 2: Użytkownik powinien być w stanie odsłonić pola na planszy, klikając je.
 - [x] Zapewnienie losowego rozmieszczenia min na planszy, unikając zbyt bliskiego umiejscowienia, by utrzymać wyzwanie dla gracza.
-- [ ] Wprowadzenie mechanizmu gwarantującego, że rozgrywka nigdy nie rozpocznie się od odsłonięcia pola z miną.
+- [x] Wprowadzenie mechanizmu gwarantującego, że rozgrywka nigdy nie rozpocznie się od odsłonięcia pola z miną.
 - [ ] Umożliwienie graczowi klikania na puste pola, co odsłoni sąsiednie puste pola, łącznie z polami po przekątnej.
 - [ ] Dodanie pól na planszy, informujących gracza o liczbie min w ich bezpośrednim sąsiedztwie. Kliknięcie w puste pole powoduje odsłonięcie sąsiednich pustych pól, również po przekątnej, wywołując łańcuchową reakcję.
 

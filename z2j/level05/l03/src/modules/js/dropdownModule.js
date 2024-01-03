@@ -1,4 +1,4 @@
-import { getBoardAttributes, startGame } from "./gameModule.js";
+import { getBoardAttributes, startGame } from './gameModule.js';
 
 export default function addNewGameDropdown() {
   const dropDownItems = [
@@ -78,15 +78,14 @@ export default function addNewGameDropdown() {
           dropdownElement.remove();
           dropdownAdded = false;
         } else if (isDropdownMenuItem) {
-
           // Kliknięcie 2 dropdown
-          const [ rows, columns, mines ] = getBoardAttributes(isDropdownMenuItem)
+          const [rows, columns, mines] = getBoardAttributes(isDropdownMenuItem);
 
           dropdownElement.remove();
           dropdownAdded = false;
-          
+
           // Rozpocznij nowa gre
-          startGame(rows, columns, mines)
+          startGame(rows, columns, mines);
         }
       });
     }
